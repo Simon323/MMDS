@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AllegroModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="offer">
+          <Key>
+            <PropertyRef Name="IT_ID" />
+          </Key>
+          <Property Name="IT_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IT_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="IT_BUY_NOW_PRICE" Type="varchar" MaxLength="50" />
+          <Property Name="PRICE_WITH_DELIVERY" Type="varchar" MaxLength="50" />
+          <Property Name="BUY_COUNT" Type="varchar" MaxLength="50" />
+          <Property Name="BOLD" Type="varchar" MaxLength="50" />
+          <Property Name="FEATURED" Type="varchar" MaxLength="50" />
+          <Property Name="THUMB" Type="varchar" MaxLength="50" />
+          <Property Name="SHOP_ITEM" Type="varchar" MaxLength="50" />
+          <Property Name="FREE_SHIPPING" Type="varchar" MaxLength="50" />
+          <Property Name="HIGHLIGHT" Type="varchar" MaxLength="50" />
+          <Property Name="SA" Type="varchar" MaxLength="50" />
+          <Property Name="samsung" Type="varchar" MaxLength="50" />
+          <Property Name="galaxy" Type="varchar" MaxLength="50" />
+          <Property Name="etui" Type="varchar" MaxLength="50" />
+          <Property Name="sony" Type="varchar" MaxLength="50" />
+          <Property Name="iphone" Type="varchar" MaxLength="50" />
+          <Property Name="xperia" Type="varchar" MaxLength="50" />
+          <Property Name="nokia" Type="varchar" MaxLength="50" />
+          <Property Name="lg" Type="varchar" MaxLength="50" />
+          <Property Name="usb" Type="varchar" MaxLength="50" />
+          <Property Name="bateria" Type="varchar" MaxLength="50" />
+          <Property Name="lumia" Type="varchar" MaxLength="50" />
+          <Property Name="mini" Type="varchar" MaxLength="50" />
+          <Property Name="hp" Type="varchar" MaxLength="50" />
+          <Property Name="folia" Type="varchar" MaxLength="50" />
+          <Property Name="htc" Type="varchar" MaxLength="50" />
+          <Property Name="lenovo" Type="varchar" MaxLength="50" />
+          <Property Name="dell" Type="varchar" MaxLength="50" />
+          <Property Name="obudowa" Type="varchar" MaxLength="50" />
+          <Property Name="pokrowiec" Type="varchar" MaxLength="50" />
+          <Property Name="radio" Type="varchar" MaxLength="50" />
+          <Property Name="laptop" Type="varchar" MaxLength="50" />
+          <Property Name="tablet" Type="varchar" MaxLength="50" />
+          <Property Name="s4" Type="varchar" MaxLength="50" />
+          <Property Name="lte" Type="varchar" MaxLength="50" />
+          <Property Name="uchwyt" Type="varchar" MaxLength="50" />
+          <Property Name="lcd" Type="varchar" MaxLength="50" />
+          <Property Name="telefon" Type="varchar" MaxLength="50" />
+          <Property Name="s5" Type="varchar" MaxLength="50" />
+          <Property Name="huawei" Type="varchar" MaxLength="50" />
+          <Property Name="pro" Type="varchar" MaxLength="50" />
+          <Property Name="kabel" Type="varchar" MaxLength="50" />
+          <Property Name="karta" Type="varchar" MaxLength="50" />
+          <Property Name="s3" Type="varchar" MaxLength="50" />
+          <Property Name="plus" Type="varchar" MaxLength="50" />
+          <Property Name="kamera" Type="varchar" MaxLength="50" />
+          <Property Name="case" Type="varchar" MaxLength="50" />
+          <Property Name="led" Type="varchar" MaxLength="50" />
+          <Property Name="fv" Type="varchar" MaxLength="50" />
+          <Property Name="wifi" Type="varchar" MaxLength="50" />
+          <Property Name="nowy" Type="varchar" MaxLength="50" />
+          <Property Name="apple" Type="varchar" MaxLength="50" />
+          <Property Name="odkurzacz" Type="varchar" MaxLength="50" />
+          <Property Name="klawiatura" Type="varchar" MaxLength="50" />
+          <Property Name="zasilacz" Type="varchar" MaxLength="50" />
+          <Property Name="antena" Type="varchar" MaxLength="50" />
+          <Property Name="bluetooth" Type="varchar" MaxLength="50" />
+          <Property Name="zestaw" Type="varchar" MaxLength="50" />
+          <Property Name="słuchawki" Type="varchar" MaxLength="50" />
+          <Property Name="asus" Type="varchar" MaxLength="50" />
+          <Property Name="canon" Type="varchar" MaxLength="50" />
+          <Property Name="8gb" Type="varchar" MaxLength="50" />
+          <Property Name="5s" Type="varchar" MaxLength="50" />
+          <Property Name="dysk" Type="varchar" MaxLength="50" />
+          <Property Name="Ładowarka" Type="varchar" MaxLength="50" />
+          <Property Name="xbox" Type="varchar" MaxLength="50" />
+          <Property Name="laptopa" Type="varchar" MaxLength="50" />
+          <Property Name="4s" Type="varchar" MaxLength="50" />
+          <Property Name="z1" Type="varchar" MaxLength="50" />
+          <Property Name="hd" Type="varchar" MaxLength="50" />
+          <Property Name="desire" Type="varchar" MaxLength="50" />
+          <Property Name="sd" Type="varchar" MaxLength="50" />
+          <Property Name="tv" Type="varchar" MaxLength="50" />
+          <Property Name="4gb" Type="varchar" MaxLength="50" />
+          <Property Name="adapter" Type="varchar" MaxLength="50" />
+          <Property Name="tusz" Type="varchar" MaxLength="50" />
+          <Property Name="nowa" Type="varchar" MaxLength="50" />
+          <Property Name="pl" Type="varchar" MaxLength="50" />
+          <Property Name="note" Type="varchar" MaxLength="50" />
+          <Property Name="core" Type="varchar" MaxLength="50" />
+          <Property Name="gps" Type="varchar" MaxLength="50" />
+          <Property Name="nikon" Type="varchar" MaxLength="50" />
+          <Property Name="grand" Type="varchar" MaxLength="50" />
+          <Property Name="windows" Type="varchar" MaxLength="50" />
+          <Property Name="router" Type="varchar" MaxLength="50" />
+          <Property Name="s6" Type="varchar" MaxLength="50" />
+          <Property Name="micro" Type="varchar" MaxLength="50" />
+          <Property Name="hdmi" Type="varchar" MaxLength="50" />
+          <Property Name="nawigacja" Type="varchar" MaxLength="50" />
+          <Property Name="philips" Type="varchar" MaxLength="50" />
+          <Property Name="mp3" Type="varchar" MaxLength="50" />
+          <Property Name="dotyk" Type="varchar" MaxLength="50" />
+          <Property Name="prime" Type="varchar" MaxLength="50" />
+          <Property Name="monitor" Type="varchar" MaxLength="50" />
+          <Property Name="samochodowe" Type="varchar" MaxLength="50" />
+          <Property Name="16gb" Type="varchar" MaxLength="50" />
+          <Property Name="pilot" Type="varchar" MaxLength="50" />
+          <Property Name="ssd" Type="varchar" MaxLength="50" />
+          <Property Name="tab" Type="varchar" MaxLength="50" />
+          <Property Name="stacja" Type="varchar" MaxLength="50" />
+          <Property Name="futerał" Type="varchar" MaxLength="50" />
+          <Property Name="trend" Type="varchar" MaxLength="50" />
+          <Property Name="czarny" Type="varchar" MaxLength="50" />
+          <Property Name="wzmacniacz" Type="varchar" MaxLength="50" />
+          <Property Name="kabura" Type="varchar" MaxLength="50" />
+          <Property Name="telewizor" Type="varchar" MaxLength="50" />
+          <Property Name="samochodowy" Type="varchar" MaxLength="50" />
+          <Property Name="gw" Type="varchar" MaxLength="50" />
+          <Property Name="dual" Type="varchar" MaxLength="50" />
+          <Property Name="ramka" Type="varchar" MaxLength="50" />
+          <Property Name="hartowane " Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="search">
+          <Key>
+            <PropertyRef Name="p number" />
+          </Key>
+          <Property Name="p number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="p searchtime" Type="varchar" MaxLength="50" />
+          <Property Name="p searchq" Type="varchar" MaxLength="50" />
+          <Property Name="p item_position" Type="varchar" MaxLength="50" />
+          <Property Name="p it_id" Type="varchar" MaxLength="50" />
+          <Property Name="p pv" Type="varchar" MaxLength="50" />
+          <Property Name="p userhash" Type="varchar" MaxLength="50" />
+          <Property Name="samsung" Type="varchar" MaxLength="50" />
+          <Property Name="galaxy" Type="varchar" MaxLength="50" />
+          <Property Name="etui" Type="varchar" MaxLength="50" />
+          <Property Name="sony" Type="varchar" MaxLength="50" />
+          <Property Name="iphone" Type="varchar" MaxLength="50" />
+          <Property Name="xperia" Type="varchar" MaxLength="50" />
+          <Property Name="nokia" Type="varchar" MaxLength="50" />
+          <Property Name="lg" Type="varchar" MaxLength="50" />
+          <Property Name="usb" Type="varchar" MaxLength="50" />
+          <Property Name="bateria" Type="varchar" MaxLength="50" />
+          <Property Name="lumia" Type="varchar" MaxLength="50" />
+          <Property Name="mini" Type="varchar" MaxLength="50" />
+          <Property Name="hp" Type="varchar" MaxLength="50" />
+          <Property Name="folia" Type="varchar" MaxLength="50" />
+          <Property Name="htc" Type="varchar" MaxLength="50" />
+          <Property Name="lenovo" Type="varchar" MaxLength="50" />
+          <Property Name="dell" Type="varchar" MaxLength="50" />
+          <Property Name="obudowa" Type="varchar" MaxLength="50" />
+          <Property Name="pokrowiec" Type="varchar" MaxLength="50" />
+          <Property Name="radio" Type="varchar" MaxLength="50" />
+          <Property Name="laptop" Type="varchar" MaxLength="50" />
+          <Property Name="tablet" Type="varchar" MaxLength="50" />
+          <Property Name="s4" Type="varchar" MaxLength="50" />
+          <Property Name="lte" Type="varchar" MaxLength="50" />
+          <Property Name="uchwyt" Type="varchar" MaxLength="50" />
+          <Property Name="lcd" Type="varchar" MaxLength="50" />
+          <Property Name="telefon" Type="varchar" MaxLength="50" />
+          <Property Name="s5" Type="varchar" MaxLength="50" />
+          <Property Name="huawei" Type="varchar" MaxLength="50" />
+          <Property Name="pro" Type="varchar" MaxLength="50" />
+          <Property Name="kabel" Type="varchar" MaxLength="50" />
+          <Property Name="karta" Type="varchar" MaxLength="50" />
+          <Property Name="s3" Type="varchar" MaxLength="50" />
+          <Property Name="plus" Type="varchar" MaxLength="50" />
+          <Property Name="kamera" Type="varchar" MaxLength="50" />
+          <Property Name="case" Type="varchar" MaxLength="50" />
+          <Property Name="led" Type="varchar" MaxLength="50" />
+          <Property Name="fv" Type="varchar" MaxLength="50" />
+          <Property Name="wifi" Type="varchar" MaxLength="50" />
+          <Property Name="nowy" Type="varchar" MaxLength="50" />
+          <Property Name="apple" Type="varchar" MaxLength="50" />
+          <Property Name="odkurzacz" Type="varchar" MaxLength="50" />
+          <Property Name="klawiatura" Type="varchar" MaxLength="50" />
+          <Property Name="zasilacz" Type="varchar" MaxLength="50" />
+          <Property Name="antena" Type="varchar" MaxLength="50" />
+          <Property Name="bluetooth" Type="varchar" MaxLength="50" />
+          <Property Name="zestaw" Type="varchar" MaxLength="50" />
+          <Property Name="słuchawki" Type="varchar" MaxLength="50" />
+          <Property Name="asus" Type="varchar" MaxLength="50" />
+          <Property Name="canon" Type="varchar" MaxLength="50" />
+          <Property Name="8gb" Type="varchar" MaxLength="50" />
+          <Property Name="5s" Type="varchar" MaxLength="50" />
+          <Property Name="dysk" Type="varchar" MaxLength="50" />
+          <Property Name="Ładowarka" Type="varchar" MaxLength="50" />
+          <Property Name="xbox" Type="varchar" MaxLength="50" />
+          <Property Name="laptopa" Type="varchar" MaxLength="50" />
+          <Property Name="4s" Type="varchar" MaxLength="50" />
+          <Property Name="z1" Type="varchar" MaxLength="50" />
+          <Property Name="hd" Type="varchar" MaxLength="50" />
+          <Property Name="desire" Type="varchar" MaxLength="50" />
+          <Property Name="sd" Type="varchar" MaxLength="50" />
+          <Property Name="tv" Type="varchar" MaxLength="50" />
+          <Property Name="4gb" Type="varchar" MaxLength="50" />
+          <Property Name="adapter" Type="varchar" MaxLength="50" />
+          <Property Name="tusz" Type="varchar" MaxLength="50" />
+          <Property Name="nowa" Type="varchar" MaxLength="50" />
+          <Property Name="pl" Type="varchar" MaxLength="50" />
+          <Property Name="note" Type="varchar" MaxLength="50" />
+          <Property Name="core" Type="varchar" MaxLength="50" />
+          <Property Name="gps" Type="varchar" MaxLength="50" />
+          <Property Name="nikon" Type="varchar" MaxLength="50" />
+          <Property Name="grand" Type="varchar" MaxLength="50" />
+          <Property Name="windows" Type="varchar" MaxLength="50" />
+          <Property Name="router" Type="varchar" MaxLength="50" />
+          <Property Name="s6" Type="varchar" MaxLength="50" />
+          <Property Name="micro" Type="varchar" MaxLength="50" />
+          <Property Name="hdmi" Type="varchar" MaxLength="50" />
+          <Property Name="nawigacja" Type="varchar" MaxLength="50" />
+          <Property Name="philips" Type="varchar" MaxLength="50" />
+          <Property Name="mp3" Type="varchar" MaxLength="50" />
+          <Property Name="dotyk" Type="varchar" MaxLength="50" />
+          <Property Name="prime" Type="varchar" MaxLength="50" />
+          <Property Name="monitor" Type="varchar" MaxLength="50" />
+          <Property Name="samochodowe" Type="varchar" MaxLength="50" />
+          <Property Name="16gb" Type="varchar" MaxLength="50" />
+          <Property Name="pilot" Type="varchar" MaxLength="50" />
+          <Property Name="ssd" Type="varchar" MaxLength="50" />
+          <Property Name="tab" Type="varchar" MaxLength="50" />
+          <Property Name="stacja" Type="varchar" MaxLength="50" />
+          <Property Name="futerał" Type="varchar" MaxLength="50" />
+          <Property Name="trend" Type="varchar" MaxLength="50" />
+          <Property Name="czarny" Type="varchar" MaxLength="50" />
+          <Property Name="wzmacniacz" Type="varchar" MaxLength="50" />
+          <Property Name="kabura" Type="varchar" MaxLength="50" />
+          <Property Name="telewizor" Type="varchar" MaxLength="50" />
+          <Property Name="samochodowy" Type="varchar" MaxLength="50" />
+          <Property Name="gw" Type="varchar" MaxLength="50" />
+          <Property Name="dual" Type="varchar" MaxLength="50" />
+          <Property Name="ramka" Type="varchar" MaxLength="50" />
+          <Property Name="hartowane " Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="AllegroModelStoreContainer">
+          <EntitySet Name="offer" EntityType="Self.offer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="search" EntityType="Self.search" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AllegroModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="offer">
+          <Key>
+            <PropertyRef Name="IT_ID" />
+          </Key>
+          <Property Name="IT_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IT_BUY_NOW_PRICE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRICE_WITH_DELIVERY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BUY_COUNT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BOLD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FEATURED" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="THUMB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SHOP_ITEM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FREE_SHIPPING" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HIGHLIGHT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="samsung" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="galaxy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="etui" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sony" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="iphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="xperia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nokia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bateria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lumia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mini" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="folia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="htc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lenovo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="obudowa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pokrowiec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="radio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="laptop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tablet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="s4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="uchwyt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lcd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="s5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="huawei" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kabel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="karta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="s3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="plus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kamera" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="case" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="led" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wifi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nowy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apple" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="odkurzacz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="klawiatura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zasilacz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="antena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bluetooth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zestaw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="słuchawki" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="asus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="canon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C8gb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C5s" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dysk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ładowarka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="xbox" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="laptopa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C4s" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="z1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="desire" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C4gb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adapter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tusz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nowa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="note" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="core" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gps" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nikon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="grand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="windows" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="router" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="s6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="micro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hdmi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nawigacja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="philips" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mp3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dotyk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="monitor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="samochodowe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C16gb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pilot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ssd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tab" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stacja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="futerał" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="trend" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="czarny" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wzmacniacz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kabura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telewizor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="samochodowy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dual" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ramka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hartowane_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="search">
+          <Key>
+            <PropertyRef Name="p_number" />
+          </Key>
+          <Property Name="p_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="p_searchtime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_searchq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_item_position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_it_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_pv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="p_userhash" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="samsung" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="galaxy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="etui" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sony" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="iphone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="xperia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nokia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bateria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lumia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mini" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="folia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="htc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lenovo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dell" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="obudowa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pokrowiec" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="radio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="laptop" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tablet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="s4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lte" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="uchwyt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lcd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="s5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="huawei" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kabel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="karta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="s3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="plus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kamera" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="case" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="led" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wifi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nowy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="apple" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="odkurzacz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="klawiatura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zasilacz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="antena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bluetooth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zestaw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="słuchawki" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="asus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="canon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C8gb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C5s" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dysk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ładowarka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="xbox" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="laptopa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C4s" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="z1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="desire" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tv" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C4gb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adapter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tusz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nowa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="note" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="core" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gps" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nikon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="grand" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="windows" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="router" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="s6" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="micro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hdmi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nawigacja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="philips" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mp3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dotyk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="monitor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="samochodowe" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C16gb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pilot" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ssd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tab" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stacja" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="futerał" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="trend" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="czarny" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wzmacniacz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="kabura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telewizor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="samochodowy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dual" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ramka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="hartowane_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="AllegroEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="offers" EntityType="Self.offer" />
+          <EntitySet Name="searches" EntityType="Self.search" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AllegroModelStoreContainer" CdmEntityContainer="AllegroEntities">
+          <EntitySetMapping Name="offers">
+            <EntityTypeMapping TypeName="AllegroModel.offer">
+              <MappingFragment StoreEntitySet="offer">
+                <ScalarProperty Name="IT_ID" ColumnName="IT_ID" />
+                <ScalarProperty Name="IT_NAME" ColumnName="IT_NAME" />
+                <ScalarProperty Name="IT_BUY_NOW_PRICE" ColumnName="IT_BUY_NOW_PRICE" />
+                <ScalarProperty Name="PRICE_WITH_DELIVERY" ColumnName="PRICE_WITH_DELIVERY" />
+                <ScalarProperty Name="BUY_COUNT" ColumnName="BUY_COUNT" />
+                <ScalarProperty Name="BOLD" ColumnName="BOLD" />
+                <ScalarProperty Name="FEATURED" ColumnName="FEATURED" />
+                <ScalarProperty Name="THUMB" ColumnName="THUMB" />
+                <ScalarProperty Name="SHOP_ITEM" ColumnName="SHOP_ITEM" />
+                <ScalarProperty Name="FREE_SHIPPING" ColumnName="FREE_SHIPPING" />
+                <ScalarProperty Name="HIGHLIGHT" ColumnName="HIGHLIGHT" />
+                <ScalarProperty Name="SA" ColumnName="SA" />
+                <ScalarProperty Name="samsung" ColumnName="samsung" />
+                <ScalarProperty Name="galaxy" ColumnName="galaxy" />
+                <ScalarProperty Name="etui" ColumnName="etui" />
+                <ScalarProperty Name="sony" ColumnName="sony" />
+                <ScalarProperty Name="iphone" ColumnName="iphone" />
+                <ScalarProperty Name="xperia" ColumnName="xperia" />
+                <ScalarProperty Name="nokia" ColumnName="nokia" />
+                <ScalarProperty Name="lg" ColumnName="lg" />
+                <ScalarProperty Name="usb" ColumnName="usb" />
+                <ScalarProperty Name="bateria" ColumnName="bateria" />
+                <ScalarProperty Name="lumia" ColumnName="lumia" />
+                <ScalarProperty Name="mini" ColumnName="mini" />
+                <ScalarProperty Name="hp" ColumnName="hp" />
+                <ScalarProperty Name="folia" ColumnName="folia" />
+                <ScalarProperty Name="htc" ColumnName="htc" />
+                <ScalarProperty Name="lenovo" ColumnName="lenovo" />
+                <ScalarProperty Name="dell" ColumnName="dell" />
+                <ScalarProperty Name="obudowa" ColumnName="obudowa" />
+                <ScalarProperty Name="pokrowiec" ColumnName="pokrowiec" />
+                <ScalarProperty Name="radio" ColumnName="radio" />
+                <ScalarProperty Name="laptop" ColumnName="laptop" />
+                <ScalarProperty Name="tablet" ColumnName="tablet" />
+                <ScalarProperty Name="s4" ColumnName="s4" />
+                <ScalarProperty Name="lte" ColumnName="lte" />
+                <ScalarProperty Name="uchwyt" ColumnName="uchwyt" />
+                <ScalarProperty Name="lcd" ColumnName="lcd" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="s5" ColumnName="s5" />
+                <ScalarProperty Name="huawei" ColumnName="huawei" />
+                <ScalarProperty Name="pro" ColumnName="pro" />
+                <ScalarProperty Name="kabel" ColumnName="kabel" />
+                <ScalarProperty Name="karta" ColumnName="karta" />
+                <ScalarProperty Name="s3" ColumnName="s3" />
+                <ScalarProperty Name="plus" ColumnName="plus" />
+                <ScalarProperty Name="kamera" ColumnName="kamera" />
+                <ScalarProperty Name="case" ColumnName="case" />
+                <ScalarProperty Name="led" ColumnName="led" />
+                <ScalarProperty Name="fv" ColumnName="fv" />
+                <ScalarProperty Name="wifi" ColumnName="wifi" />
+                <ScalarProperty Name="nowy" ColumnName="nowy" />
+                <ScalarProperty Name="apple" ColumnName="apple" />
+                <ScalarProperty Name="odkurzacz" ColumnName="odkurzacz" />
+                <ScalarProperty Name="klawiatura" ColumnName="klawiatura" />
+                <ScalarProperty Name="zasilacz" ColumnName="zasilacz" />
+                <ScalarProperty Name="antena" ColumnName="antena" />
+                <ScalarProperty Name="bluetooth" ColumnName="bluetooth" />
+                <ScalarProperty Name="zestaw" ColumnName="zestaw" />
+                <ScalarProperty Name="słuchawki" ColumnName="słuchawki" />
+                <ScalarProperty Name="asus" ColumnName="asus" />
+                <ScalarProperty Name="canon" ColumnName="canon" />
+                <ScalarProperty Name="C8gb" ColumnName="8gb" />
+                <ScalarProperty Name="C5s" ColumnName="5s" />
+                <ScalarProperty Name="dysk" ColumnName="dysk" />
+                <ScalarProperty Name="Ładowarka" ColumnName="Ładowarka" />
+                <ScalarProperty Name="xbox" ColumnName="xbox" />
+                <ScalarProperty Name="laptopa" ColumnName="laptopa" />
+                <ScalarProperty Name="C4s" ColumnName="4s" />
+                <ScalarProperty Name="z1" ColumnName="z1" />
+                <ScalarProperty Name="hd" ColumnName="hd" />
+                <ScalarProperty Name="desire" ColumnName="desire" />
+                <ScalarProperty Name="sd" ColumnName="sd" />
+                <ScalarProperty Name="tv" ColumnName="tv" />
+                <ScalarProperty Name="C4gb" ColumnName="4gb" />
+                <ScalarProperty Name="adapter" ColumnName="adapter" />
+                <ScalarProperty Name="tusz" ColumnName="tusz" />
+                <ScalarProperty Name="nowa" ColumnName="nowa" />
+                <ScalarProperty Name="pl" ColumnName="pl" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="core" ColumnName="core" />
+                <ScalarProperty Name="gps" ColumnName="gps" />
+                <ScalarProperty Name="nikon" ColumnName="nikon" />
+                <ScalarProperty Name="grand" ColumnName="grand" />
+                <ScalarProperty Name="windows" ColumnName="windows" />
+                <ScalarProperty Name="router" ColumnName="router" />
+                <ScalarProperty Name="s6" ColumnName="s6" />
+                <ScalarProperty Name="micro" ColumnName="micro" />
+                <ScalarProperty Name="hdmi" ColumnName="hdmi" />
+                <ScalarProperty Name="nawigacja" ColumnName="nawigacja" />
+                <ScalarProperty Name="philips" ColumnName="philips" />
+                <ScalarProperty Name="mp3" ColumnName="mp3" />
+                <ScalarProperty Name="dotyk" ColumnName="dotyk" />
+                <ScalarProperty Name="prime" ColumnName="prime" />
+                <ScalarProperty Name="monitor" ColumnName="monitor" />
+                <ScalarProperty Name="samochodowe" ColumnName="samochodowe" />
+                <ScalarProperty Name="C16gb" ColumnName="16gb" />
+                <ScalarProperty Name="pilot" ColumnName="pilot" />
+                <ScalarProperty Name="ssd" ColumnName="ssd" />
+                <ScalarProperty Name="tab" ColumnName="tab" />
+                <ScalarProperty Name="stacja" ColumnName="stacja" />
+                <ScalarProperty Name="futerał" ColumnName="futerał" />
+                <ScalarProperty Name="trend" ColumnName="trend" />
+                <ScalarProperty Name="czarny" ColumnName="czarny" />
+                <ScalarProperty Name="wzmacniacz" ColumnName="wzmacniacz" />
+                <ScalarProperty Name="kabura" ColumnName="kabura" />
+                <ScalarProperty Name="telewizor" ColumnName="telewizor" />
+                <ScalarProperty Name="samochodowy" ColumnName="samochodowy" />
+                <ScalarProperty Name="gw" ColumnName="gw" />
+                <ScalarProperty Name="dual" ColumnName="dual" />
+                <ScalarProperty Name="ramka" ColumnName="ramka" />
+                <ScalarProperty Name="hartowane_" ColumnName="hartowane " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="searches">
+            <EntityTypeMapping TypeName="AllegroModel.search">
+              <MappingFragment StoreEntitySet="search">
+                <ScalarProperty Name="p_number" ColumnName="p number" />
+                <ScalarProperty Name="p_searchtime" ColumnName="p searchtime" />
+                <ScalarProperty Name="p_searchq" ColumnName="p searchq" />
+                <ScalarProperty Name="p_item_position" ColumnName="p item_position" />
+                <ScalarProperty Name="p_it_id" ColumnName="p it_id" />
+                <ScalarProperty Name="p_pv" ColumnName="p pv" />
+                <ScalarProperty Name="p_userhash" ColumnName="p userhash" />
+                <ScalarProperty Name="samsung" ColumnName="samsung" />
+                <ScalarProperty Name="galaxy" ColumnName="galaxy" />
+                <ScalarProperty Name="etui" ColumnName="etui" />
+                <ScalarProperty Name="sony" ColumnName="sony" />
+                <ScalarProperty Name="iphone" ColumnName="iphone" />
+                <ScalarProperty Name="xperia" ColumnName="xperia" />
+                <ScalarProperty Name="nokia" ColumnName="nokia" />
+                <ScalarProperty Name="lg" ColumnName="lg" />
+                <ScalarProperty Name="usb" ColumnName="usb" />
+                <ScalarProperty Name="bateria" ColumnName="bateria" />
+                <ScalarProperty Name="lumia" ColumnName="lumia" />
+                <ScalarProperty Name="mini" ColumnName="mini" />
+                <ScalarProperty Name="hp" ColumnName="hp" />
+                <ScalarProperty Name="folia" ColumnName="folia" />
+                <ScalarProperty Name="htc" ColumnName="htc" />
+                <ScalarProperty Name="lenovo" ColumnName="lenovo" />
+                <ScalarProperty Name="dell" ColumnName="dell" />
+                <ScalarProperty Name="obudowa" ColumnName="obudowa" />
+                <ScalarProperty Name="pokrowiec" ColumnName="pokrowiec" />
+                <ScalarProperty Name="radio" ColumnName="radio" />
+                <ScalarProperty Name="laptop" ColumnName="laptop" />
+                <ScalarProperty Name="tablet" ColumnName="tablet" />
+                <ScalarProperty Name="s4" ColumnName="s4" />
+                <ScalarProperty Name="lte" ColumnName="lte" />
+                <ScalarProperty Name="uchwyt" ColumnName="uchwyt" />
+                <ScalarProperty Name="lcd" ColumnName="lcd" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="s5" ColumnName="s5" />
+                <ScalarProperty Name="huawei" ColumnName="huawei" />
+                <ScalarProperty Name="pro" ColumnName="pro" />
+                <ScalarProperty Name="kabel" ColumnName="kabel" />
+                <ScalarProperty Name="karta" ColumnName="karta" />
+                <ScalarProperty Name="s3" ColumnName="s3" />
+                <ScalarProperty Name="plus" ColumnName="plus" />
+                <ScalarProperty Name="kamera" ColumnName="kamera" />
+                <ScalarProperty Name="case" ColumnName="case" />
+                <ScalarProperty Name="led" ColumnName="led" />
+                <ScalarProperty Name="fv" ColumnName="fv" />
+                <ScalarProperty Name="wifi" ColumnName="wifi" />
+                <ScalarProperty Name="nowy" ColumnName="nowy" />
+                <ScalarProperty Name="apple" ColumnName="apple" />
+                <ScalarProperty Name="odkurzacz" ColumnName="odkurzacz" />
+                <ScalarProperty Name="klawiatura" ColumnName="klawiatura" />
+                <ScalarProperty Name="zasilacz" ColumnName="zasilacz" />
+                <ScalarProperty Name="antena" ColumnName="antena" />
+                <ScalarProperty Name="bluetooth" ColumnName="bluetooth" />
+                <ScalarProperty Name="zestaw" ColumnName="zestaw" />
+                <ScalarProperty Name="słuchawki" ColumnName="słuchawki" />
+                <ScalarProperty Name="asus" ColumnName="asus" />
+                <ScalarProperty Name="canon" ColumnName="canon" />
+                <ScalarProperty Name="C8gb" ColumnName="8gb" />
+                <ScalarProperty Name="C5s" ColumnName="5s" />
+                <ScalarProperty Name="dysk" ColumnName="dysk" />
+                <ScalarProperty Name="Ładowarka" ColumnName="Ładowarka" />
+                <ScalarProperty Name="xbox" ColumnName="xbox" />
+                <ScalarProperty Name="laptopa" ColumnName="laptopa" />
+                <ScalarProperty Name="C4s" ColumnName="4s" />
+                <ScalarProperty Name="z1" ColumnName="z1" />
+                <ScalarProperty Name="hd" ColumnName="hd" />
+                <ScalarProperty Name="desire" ColumnName="desire" />
+                <ScalarProperty Name="sd" ColumnName="sd" />
+                <ScalarProperty Name="tv" ColumnName="tv" />
+                <ScalarProperty Name="C4gb" ColumnName="4gb" />
+                <ScalarProperty Name="adapter" ColumnName="adapter" />
+                <ScalarProperty Name="tusz" ColumnName="tusz" />
+                <ScalarProperty Name="nowa" ColumnName="nowa" />
+                <ScalarProperty Name="pl" ColumnName="pl" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="core" ColumnName="core" />
+                <ScalarProperty Name="gps" ColumnName="gps" />
+                <ScalarProperty Name="nikon" ColumnName="nikon" />
+                <ScalarProperty Name="grand" ColumnName="grand" />
+                <ScalarProperty Name="windows" ColumnName="windows" />
+                <ScalarProperty Name="router" ColumnName="router" />
+                <ScalarProperty Name="s6" ColumnName="s6" />
+                <ScalarProperty Name="micro" ColumnName="micro" />
+                <ScalarProperty Name="hdmi" ColumnName="hdmi" />
+                <ScalarProperty Name="nawigacja" ColumnName="nawigacja" />
+                <ScalarProperty Name="philips" ColumnName="philips" />
+                <ScalarProperty Name="mp3" ColumnName="mp3" />
+                <ScalarProperty Name="dotyk" ColumnName="dotyk" />
+                <ScalarProperty Name="prime" ColumnName="prime" />
+                <ScalarProperty Name="monitor" ColumnName="monitor" />
+                <ScalarProperty Name="samochodowe" ColumnName="samochodowe" />
+                <ScalarProperty Name="C16gb" ColumnName="16gb" />
+                <ScalarProperty Name="pilot" ColumnName="pilot" />
+                <ScalarProperty Name="ssd" ColumnName="ssd" />
+                <ScalarProperty Name="tab" ColumnName="tab" />
+                <ScalarProperty Name="stacja" ColumnName="stacja" />
+                <ScalarProperty Name="futerał" ColumnName="futerał" />
+                <ScalarProperty Name="trend" ColumnName="trend" />
+                <ScalarProperty Name="czarny" ColumnName="czarny" />
+                <ScalarProperty Name="wzmacniacz" ColumnName="wzmacniacz" />
+                <ScalarProperty Name="kabura" ColumnName="kabura" />
+                <ScalarProperty Name="telewizor" ColumnName="telewizor" />
+                <ScalarProperty Name="samochodowy" ColumnName="samochodowy" />
+                <ScalarProperty Name="gw" ColumnName="gw" />
+                <ScalarProperty Name="dual" ColumnName="dual" />
+                <ScalarProperty Name="ramka" ColumnName="ramka" />
+                <ScalarProperty Name="hartowane_" ColumnName="hartowane " />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

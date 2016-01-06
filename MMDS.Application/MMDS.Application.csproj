@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C12FAD0-59FB-4013-87F7-A6F46EECD4D0}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{B66384A1-8CB0-4722-BADA-1C6799B2F5CE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MMDS.DBContext</RootNamespace>
-    <AssemblyName>MMDS.DBContext</AssemblyName>
+    <RootNamespace>MMDS.Application</RootNamespace>
+    <AssemblyName>MMDS.Application</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -49,15 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\BaseDbContextRepository.cs" />
-    <Compile Include="Repository\IRepository\IBaseDynamicRepository.cs" />
-    <Compile Include="Repository\IRepository\IBaseRepository.cs" />
-    <Compile Include="Repository\IRepository\IEntitiesKeys.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MMDS.DBContext\MMDS.DBContext.csproj">
+      <Project>{5c12fad0-59fb-4013-87f7-a6f46eecd4d0}</Project>
+      <Name>MMDS.DBContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MMDS.Model\MMDS.Model.csproj">
+      <Project>{819a4bad-0888-4635-8630-7255a574555c}</Project>
+      <Name>MMDS.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
