@@ -12,12 +12,22 @@ namespace MMDS.Application
     {
         static void Main(string[] args)
         {
-            //IOfferRepository xxx = new OfferRepository();
-            
-            //foreach(var x in xxx.GetAll().ToList())
+            IOfferRepository xxx = new OfferRepository();
+            ISearchRepository searchRepository = new SearchRepository();
+
+            //var searchList = searchRepository.GetAll().ToList();
+            //int count = searchList.Count;
+            //int i = 0;
+
+            //foreach (var element in searchList)
             //{
-            //    Console.WriteLine(x.IT_NAME);
+            //    i++;
+            //    double percent = (i * 100) / count;
+            //    Console.Clear();
+            //    Console.WriteLine(percent);
             //}
+
+            Console.WriteLine(searchRepository.count());
         }
     }
 }
