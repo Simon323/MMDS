@@ -12,10 +12,16 @@ namespace MMDS.Model.Repository
 {
     public class SearchRepository : BaseDbContextRepository<search, AllegroEntities>, ISearchRepository
     {
-        public int count()
+        public int CountForSingleWord(string word)
         {
             //return Items.Where(x => x.samsung.Equals("1")).Count();
-            return Items.Where("samsung=\"1\"").Count();
+            return Items.Where(word + "=\"1\"").Count();
+        }
+
+        public int CountForPairWord(string wordOne, string wordTwo)
+        {
+            //return Items.Where(x => x.samsung.Equals("1")).Count();
+            return Items.Where(wordOne + "=\"1\" AND " + wordTwo + "=\"1\"").Count();
         }
     }
 }

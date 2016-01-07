@@ -10,6 +10,7 @@ namespace MMDS.Model.Repository.Interfaces
     public interface ISearchRepository
     {
         IQueryable<search> GetAll();
-        int count();
+        int CountForSingleWord(string word);
+        int CountForPairWord(string wordOne, string wordTwo);
     }
 }
