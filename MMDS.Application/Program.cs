@@ -292,69 +292,6 @@ namespace MMDS.Application
                 Console.WriteLine("Similar: " + item.similarOfferList.First().offerId + " Percent: " + item.similarOfferList.First().percentSimilar);
                 Console.WriteLine();
             }
-
-            //var watch = Stopwatch.StartNew();
-
-            //foreach (var offer in listAllOffer)
-            //{
-            //    counter++;
-            //    List<string> sourceOfferWords = new List<string>();
-            //    List<Similar> similarList = new List<Similar>();
-
-            //    foreach (var word in topWordsList)
-            //    {
-            //        var value = offer.GetType().GetProperty(word).GetValue(offer, null);
-
-            //        if (value.Equals("1"))
-            //            sourceOfferWords.Add(word);
-            //    }
-
-
-            //    for (int i = counter; i < listAllOffer.Count() ; i++)
-            //    {
-            //        List<string> compareOfferWords = new List<string>();
-
-            //        var offerToCompare = listAllOffer.ElementAt(i);
-
-            //        foreach (var word in topWordsList)
-            //        {
-            //            var value = offerToCompare.GetType().GetProperty(word).GetValue(offer, null);
-
-            //            if (value.Equals("1"))
-            //                compareOfferWords.Add(word);
-            //        }
-
-            //        double intersectCount = sourceOfferWords.Select(x => x).Intersect(compareOfferWords).Count();
-            //        double unionCounter = sourceOfferWords.Union(compareOfferWords).ToList().Count();
-
-            //        similarList.Add(new Similar(offerToCompare.IT_ID, unionCounter.Equals(0) ? 0 : (intersectCount / unionCounter)));
-
-            //    }
-
-            //    result.Add(new Offer(offer.IT_ID, similarList));
-
-            //    if (counter == 99)
-            //    {
-            //        break;
-            //    }
-
-            //    Console.Clear();
-            //    progress++;
-            //    Console.WriteLine(progress);
-            //}
-
-            //watch.Stop();
-            //Console.Clear();
-            //Console.WriteLine("Time elapsed: {0:hh\\:mm\\:ss}", watch.Elapsed);
-
-            //foreach (var item in result)
-            //{
-            //    item.similarOfferList = item.similarOfferList.OrderByDescending(x => x.percentSimilar).ToList();
-
-            //    Console.WriteLine("Offer: " + item.offerId);
-            //    Console.WriteLine("Similar: " + item.similarOfferList.First().offerId + " Percent: " + item.similarOfferList.First().percentSimilar);
-            //    Console.WriteLine();
-            //}
         }
 
          
