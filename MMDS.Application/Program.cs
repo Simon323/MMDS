@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Dynamic;
 
 namespace MMDS.Application
 {
@@ -212,58 +213,71 @@ namespace MMDS.Application
 
             var listAllOffer = offerRepositiry.GetAll().OrderBy(x => x.IT_ID).ToList();
             List<Offer> result = new List<Offer>();
-            int counter = 0;
-            int progress = 0;
-            Console.WriteLine(progress);
-
+            double progress = 0.0;
             var watch = Stopwatch.StartNew();
 
-            foreach (var offer in listAllOffer)
+            foreach (var offer in listAllOffer.Take(100))
             {
-                counter++;
-                List<string> sourceOfferWords = new List<string>();
-                List<Similar> similarList = new List<Similar>();
-
+                List<string> keyWordsList = new List<string>();
                 foreach (var word in topWordsList)
                 {
                     var value = offer.GetType().GetProperty(word).GetValue(offer, null);
-
                     if (value.Equals("1"))
-                        sourceOfferWords.Add(word);
+                    {
+                        keyWordsList.Add(word);
+                    }
                 }
 
-                
-                for (int i = counter; i < listAllOffer.Count() ; i++)
+                if(keyWordsList.Count() > 0)
                 {
-                    List<string> compareOfferWords = new List<string>();
-                    
-                    var offerToCompare = listAllOffer.ElementAt(i);
+                    result.Add(new Offer(offer.IT_ID, keyWordsList));
+                }
+            }
 
+            Console.WriteLine(progress);
+
+            foreach (var item in result)
+            {
+                progress += 1.28;
+                string query = String.Empty;
+
+                var last = item.keyWordsList.Last();
+                foreach (var attr in item.keyWordsList)
+                {
+                    if (attr.Equals(last))
+                    {
+                        query += attr + "=\"1\"";
+                    }
+                    else
+                    {
+                        query += attr + "=\"1\" OR ";
+                    }
+                }
+
+                var listAllSimilarOffer = listAllOffer.Where(query).ToList();
+                listAllSimilarOffer.Remove(listAllOffer.FirstOrDefault(x => x.IT_ID.Equals(item.offerId)));
+
+                foreach(var similarOffer in listAllSimilarOffer)
+                {
+                    List<string> keyWordsList = new List<string>();
                     foreach (var word in topWordsList)
                     {
-                        var value = offerToCompare.GetType().GetProperty(word).GetValue(offer, null);
-
+                        var value = similarOffer.GetType().GetProperty(word).GetValue(similarOffer, null);
                         if (value.Equals("1"))
-                            compareOfferWords.Add(word);
+                        {
+                            keyWordsList.Add(word);
+                        }
                     }
 
-                    double intersectCount = sourceOfferWords.Select(x => x).Intersect(compareOfferWords).Count();
-                    double unionCounter = sourceOfferWords.Union(compareOfferWords).ToList().Count();
-
-                    similarList.Add(new Similar(offerToCompare.IT_ID, unionCounter.Equals(0) ? 0 : (intersectCount / unionCounter)));
-                    
-                }
-
-                result.Add(new Offer(offer.IT_ID, similarList));
-
-                if (counter == 99)
-                {
-                    break;
+                    double intersectCount = item.keyWordsList.Select(x => x).Intersect(keyWordsList).Count();
+                    double unionCounter = item.keyWordsList.Union(keyWordsList).ToList().Count();
+                    double divideResult = unionCounter.Equals(0) ? 0 : (intersectCount / unionCounter);
+                    item.similarOfferList.Add(new Similar(similarOffer.IT_ID, divideResult));
                 }
 
                 Console.Clear();
-                progress++;
-                Console.WriteLine(progress);
+                progress += 1.28;
+                Console.Write(progress);
             }
 
             watch.Stop();
@@ -278,6 +292,71 @@ namespace MMDS.Application
                 Console.WriteLine("Similar: " + item.similarOfferList.First().offerId + " Percent: " + item.similarOfferList.First().percentSimilar);
                 Console.WriteLine();
             }
+
+            //var watch = Stopwatch.StartNew();
+
+            //foreach (var offer in listAllOffer)
+            //{
+            //    counter++;
+            //    List<string> sourceOfferWords = new List<string>();
+            //    List<Similar> similarList = new List<Similar>();
+
+            //    foreach (var word in topWordsList)
+            //    {
+            //        var value = offer.GetType().GetProperty(word).GetValue(offer, null);
+
+            //        if (value.Equals("1"))
+            //            sourceOfferWords.Add(word);
+            //    }
+
+
+            //    for (int i = counter; i < listAllOffer.Count() ; i++)
+            //    {
+            //        List<string> compareOfferWords = new List<string>();
+
+            //        var offerToCompare = listAllOffer.ElementAt(i);
+
+            //        foreach (var word in topWordsList)
+            //        {
+            //            var value = offerToCompare.GetType().GetProperty(word).GetValue(offer, null);
+
+            //            if (value.Equals("1"))
+            //                compareOfferWords.Add(word);
+            //        }
+
+            //        double intersectCount = sourceOfferWords.Select(x => x).Intersect(compareOfferWords).Count();
+            //        double unionCounter = sourceOfferWords.Union(compareOfferWords).ToList().Count();
+
+            //        similarList.Add(new Similar(offerToCompare.IT_ID, unionCounter.Equals(0) ? 0 : (intersectCount / unionCounter)));
+
+            //    }
+
+            //    result.Add(new Offer(offer.IT_ID, similarList));
+
+            //    if (counter == 99)
+            //    {
+            //        break;
+            //    }
+
+            //    Console.Clear();
+            //    progress++;
+            //    Console.WriteLine(progress);
+            //}
+
+            //watch.Stop();
+            //Console.Clear();
+            //Console.WriteLine("Time elapsed: {0:hh\\:mm\\:ss}", watch.Elapsed);
+
+            //foreach (var item in result)
+            //{
+            //    item.similarOfferList = item.similarOfferList.OrderByDescending(x => x.percentSimilar).ToList();
+
+            //    Console.WriteLine("Offer: " + item.offerId);
+            //    Console.WriteLine("Similar: " + item.similarOfferList.First().offerId + " Percent: " + item.similarOfferList.First().percentSimilar);
+            //    Console.WriteLine();
+            //}
         }
+
+         
     }
 }
