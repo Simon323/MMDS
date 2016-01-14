@@ -45,10 +45,6 @@ namespace MMDS.Lab
                         if (!dictionaryItem.Contains(song))
                             dictionaryItem.Add(song);
                     }
-                        
-
-                    //factsList.Add(new Facts(int.Parse(values[0].Trim()), int.Parse(values[1].Trim()), int.Parse(values[2].Trim())));
-
                 }
             }
 
@@ -58,5 +54,22 @@ namespace MMDS.Lab
 
             return usersDictionary;
         }
+
+        public static void ExportToFile(Dictionary<int, Dictionary<int, Double>> result)
+        {
+            string stringResult = "";
+
+            foreach (var item in result)
+            {
+                stringResult += "User " + item.Key.ToString() + " :" + Environment.NewLine;
+
+                foreach (var x in item.Value)
+                {
+                    stringResult += x.Key.ToString() + " " + x.Value.ToString() + Environment.NewLine;
+                }
+            }
+
+            File.WriteAllText("resultFile.txt", stringResult);
+        } 
     }
 }
