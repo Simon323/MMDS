@@ -146,11 +146,11 @@ namespace MMDS.Lab
                     int worker = int.Parse(values[1].Trim());
                     int article = int.Parse(values[0].Trim());
 
-                    if (!worker.Equals(1) && !worker.Equals(9) && !worker.Equals(10) && !worker.Equals(11) && !worker.Equals(14))
-                        continue;
+                    //if (!worker.Equals(1) && !worker.Equals(9) && !worker.Equals(10) && !worker.Equals(11) && !worker.Equals(14))
+                    //    continue;
 
-                    if (!worker.Equals(1))
-                        continue;
+                    //if (!worker.Equals(1))
+                    //    continue;
 
                     if (!highFiveArticles.ContainsKey(worker))
                     {
@@ -188,6 +188,7 @@ namespace MMDS.Lab
             }
 
             SaveToFile(result);
+            SaveToFileCooperateInformation(result);
         }
 
         public static Dictionary<int, string> ReadAllAuthors()
@@ -267,9 +268,12 @@ namespace MMDS.Lab
         public static void SaveToFile(List<Dictionary<int, int>> result)
         {
             string stringResult = "";
-
+            int iter = 0;
             foreach (var item in result)
             {
+                iter++;
+                stringResult += "Worker: " + iter;
+                stringResult += Environment.NewLine;
                 foreach (var x in item)
                 {
                     stringResult += "Worker " + x.Key.ToString() + " Articles" + x.Value.ToString() + Environment.NewLine;
@@ -278,9 +282,41 @@ namespace MMDS.Lab
                 stringResult += Environment.NewLine;
                 stringResult += "-----------------------------------------";
                 stringResult += Environment.NewLine;
+                stringResult += Environment.NewLine;
             }
 
             File.WriteAllText("resultFile.txt", stringResult);
+        }
+
+        public static void SaveToFileCooperateInformation(List<Dictionary<int, int>> result)
+        {
+            string stringResult = "";
+
+            Dictionary<int, int> dic = new Dictionary<int, int>();
+            for (int i = 1; i < 99; i++)
+            {
+                int worker = 0;
+                int ascribeToWorker = 0;
+                int bestWrittingArticleCounter = 0;
+                foreach (var item in result)
+                {
+                    worker++;
+                    if (bestWrittingArticleCounter < item[i])
+                    {
+                        ascribeToWorker = worker;
+                        bestWrittingArticleCounter = item[i];
+                    }
+                }
+
+                dic.Add(i, ascribeToWorker);
+            }
+
+            foreach (var x in dic)
+            {
+                stringResult += "Worker " + x.Key.ToString() + " Cooperate " + x.Value.ToString() + Environment.NewLine;
+            }
+
+            File.WriteAllText("cooperation.txt", stringResult);
         }
     }
 }
