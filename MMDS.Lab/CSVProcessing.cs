@@ -168,23 +168,23 @@ namespace MMDS.Lab
                 }
             }
 
-            List<Dictionary<int, int>> result = new List<Dictionary<int, int>>();
+            List<Tuple<int, Dictionary<int, int>>> result = new List<Tuple<int, Dictionary<int, int>>>(); //worker i (lista workerów z którymi pisali i ile razem)
 
-            foreach (var author in highFiveArticles)
+            foreach (var author in highFiveArticles.OrderBy(x => x.Key).ToList()) //iterowanie po workerze i jego artukułach
             {
                 Dictionary<int, int> cooperateDectionary = GenerateResultDictionary();
-                foreach (var article in author.Value)
+                foreach (var article in author.Value) //iterowanie po artukułach
                 {
-                    if (allArticlesDictionary.ContainsKey(article))
+                    if (allArticlesDictionary.ContainsKey(article)) //kto napisał artykuł
                     {
                         foreach(var x in allArticlesDictionary[article])
                         {
-                            cooperateDectionary[x] += 1;
+                            cooperateDectionary[x] += 1; //kto napisa ile artukułów z danym workerem
                         }
                     }
                 }
 
-                result.Add(cooperateDectionary.OrderByDescending(x => x.Value).ToDictionary(y => y.Key, y => y.Value));
+                result.Add(new Tuple<int, Dictionary<int, int>>(author.Key, cooperateDectionary.OrderByDescending(x => x.Value).ToDictionary(y => y.Key, y => y.Value)));
             }
 
             SaveToFile(result);
@@ -265,18 +265,16 @@ namespace MMDS.Lab
             return result;
         }
 
-        public static void SaveToFile(List<Dictionary<int, int>> result)
+        public static void SaveToFile(List<Tuple<int, Dictionary<int, int>>> result)
         {
             string stringResult = "";
-            int iter = 0;
             foreach (var item in result)
             {
-                iter++;
-                stringResult += "Worker: " + iter;
+                stringResult += "Worker: " + item.Item1;
                 stringResult += Environment.NewLine;
-                foreach (var x in item)
+                foreach (var x in item.Item2)
                 {
-                    stringResult += "Worker " + x.Key.ToString() + " Articles" + x.Value.ToString() + Environment.NewLine;
+                    stringResult += "Worker " + x.Key.ToString() + " Articles " + x.Value.ToString() + Environment.NewLine;
                 }
 
                 stringResult += Environment.NewLine;
@@ -288,32 +286,54 @@ namespace MMDS.Lab
             File.WriteAllText("resultFile.txt", stringResult);
         }
 
-        public static void SaveToFileCooperateInformation(List<Dictionary<int, int>> result)
+        public static void SaveToFileCooperateInformation(List<Tuple<int, Dictionary<int, int>>> result)
         {
             string stringResult = "";
 
-            Dictionary<int, int> dic = new Dictionary<int, int>();
+            Dictionary<int, List<int>> dic = new Dictionary<int, List<int>>();
             for (int i = 1; i < 99; i++)
             {
-                int worker = 0;
-                int ascribeToWorker = 0;
-                int bestWrittingArticleCounter = 0;
+                List<Tuple<int, int>> temp = new List<Tuple<int, int>>(); // worker z którym współpracuje i ile razem napisaliśmy
                 foreach (var item in result)
                 {
-                    worker++;
-                    if (bestWrittingArticleCounter < item[i])
+                    if(result.FirstOrDefault(x => x.Item1.Equals(i)) == null)
                     {
-                        ascribeToWorker = worker;
-                        bestWrittingArticleCounter = item[i];
+                        temp.Add(new Tuple<int, int>(0, 0));
+                        continue; //gdy worker z nikim nie współpracuje
+                    }
+
+                    if(item.Item1 != i)
+                    {
+                        temp.Add(new Tuple<int, int>(item.Item1, item.Item2[i]));
                     }
                 }
 
-                dic.Add(i, ascribeToWorker);
+                var list = new List<int>();
+                int iter = 0;
+                int selectPosition = 1;
+                foreach (var x in temp.OrderByDescending(x => x.Item2).Take(selectPosition))
+                {
+                    iter++;
+                    if (iter < selectPosition)
+                        continue;
+
+                    list.Add(x.Item1);
+                }
+
+                dic.Add(i, list);
             }
 
             foreach (var x in dic)
             {
-                stringResult += "Worker " + x.Key.ToString() + " Cooperate " + x.Value.ToString() + Environment.NewLine;
+                foreach(var y in x.Value)
+                {
+                    stringResult += "Worker " + x.Key.ToString() + " Cooperate " + y.ToString() + Environment.NewLine;
+                }
+
+                stringResult += Environment.NewLine;
+                stringResult += "-----------------------------------------";
+                stringResult += Environment.NewLine;
+                stringResult += Environment.NewLine;
             }
 
             File.WriteAllText("cooperation.txt", stringResult);
