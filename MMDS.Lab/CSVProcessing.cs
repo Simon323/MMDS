@@ -10,10 +10,10 @@ namespace MMDS.Lab
 {
     public class CSVProcessing
     {
-        public static Dictionary<int, List<int>> ReadAllFactsToMemory()
+        public static Dictionary<int, Dictionary<int, int>> ReadAllFactsToMemory()
         {
             bool firstRow = true;
-            Dictionary<int, List<int>> usersDictionary = new Dictionary<int, List<int>>();
+            Dictionary<int, Dictionary<int, int>> usersDictionary = new Dictionary<int, Dictionary<int, int>>();
             var watch = Stopwatch.StartNew();
             using (FileStream fs = File.Open(@"D:\Studia\MMDS\msdc-facts\facts.csv", FileMode.Open))
             using (BufferedStream bs = new BufferedStream(fs))
@@ -36,14 +36,16 @@ namespace MMDS.Lab
                     {
                         var songList = new List<int>();
                         songList.Add(song);
-                        usersDictionary.Add(user, songList);
+                        Dictionary<int, int> x = new Dictionary<int, int>();
+                        x.Add(song, song);
+                        usersDictionary.Add(user, x);
                     }
                     else
                     {
                         var dictionaryItem = usersDictionary[user];
 
-                        if (!dictionaryItem.Contains(song))
-                            dictionaryItem.Add(song);
+                        if (!dictionaryItem.ContainsKey(song))
+                            dictionaryItem.Add(song, song);
                     }
                 }
             }
