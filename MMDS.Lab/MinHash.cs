@@ -9,7 +9,7 @@ namespace MMDS.Lab
     public class MinHash
     {
         private const int m_numHashFunctions = 100; //Modify this parameter
-        private delegate int Hash(int index);
+        private delegate uint Hash(int index);
         private Hash[] m_hashFunctions;
 
         public MinHash(int universeSize)
@@ -20,131 +20,139 @@ namespace MMDS.Lab
             Random r = new Random(11);
             for (int i = 0; i < m_numHashFunctions; i++)
             {
-                int a = r.Next(1, universeSize);
-                int b = r.Next(1, universeSize);
-                int p = 28000019;
-                int m = r.Next(1, universeSize);
+                int a = r.Next(universeSize);
+                int b = r.Next(universeSize);
+                int p = universeSize;
+                int m = r.Next(universeSize);
                 m_hashFunctions[i] = input => GetHash(a, b, p, m, input);
             }
         }
 
-        private int GetHash(int a, int b, int p, int m, int input)
+        private uint GetHash(int a, int b, int p, int m, int input)
         {
-            return ((a * input + b )% p);
+            return (uint)((a * input + b )% p);
         }
 
-        public int[] GenerateHash(HashSet<int> input)
+        public uint[] GenerateHash(HashSet<int> input)
         {
-            int[] tableResult = new int[input.Count];
-            int iterator = 0;
+            uint[] tableResult = new uint[100];
+
+            for(int i = 0; i < 100; i++)
+            {
+                tableResult[i] = uint.MaxValue;
+            }
+
             foreach(var element in input)
             {
-                int[] minHashTable = new int[100];
                 for(int i = 0; i < 100; i++)
                 {
-                    minHashTable[i] = m_hashFunctions[i](element);
+                    uint minHash = m_hashFunctions[i](element);
+                    tableResult[i] = Math.Min(minHash, tableResult[i]);
                 }
-
-                tableResult[iterator] = minHashTable.Min();
-                iterator++;
             }
 
             return tableResult;
         }
 
-        public double Similarity<T>(HashSet<T> set1, HashSet<T> set2)
-        {
+        #region OLD
 
-            int numSets = 2;
-            Dictionary<T, bool[]> bitMap = BuildBitMap(set1, set2);
 
-            int[,] minHashValues = GetMinHashSlots(numSets, m_numHashFunctions);
 
-            ComputeMinHashForSet(set1, 0, minHashValues, bitMap);
-            ComputeMinHashForSet(set2, 1, minHashValues, bitMap);
+        //public double Similarity<T>(HashSet<T> set1, HashSet<T> set2)
+        //{
 
-            return ComputeSimilarityFromSignatures(minHashValues, m_numHashFunctions);
-        }
+        //    int numSets = 2;
+        //    Dictionary<T, bool[]> bitMap = BuildBitMap(set1, set2);
 
-        private void ComputeMinHashForSet<T>(HashSet<T> set, short setIndex, int[,] minHashValues, Dictionary<T, bool[]> bitArray)
-        {
-            int index = 0;
-            foreach (T element in bitArray.Keys)
-            {
-                for (int i = 0; i < m_numHashFunctions; i++)
-                {
-                    if (set.Contains(element))
-                    {
-                        int hindex = m_hashFunctions[i](index);
+        //    int[,] minHashValues = GetMinHashSlots(numSets, m_numHashFunctions);
 
-                        if (hindex < minHashValues[setIndex, i])
-                        {
-                            minHashValues[setIndex, i] = hindex;
-                        }
-                    }
-                }
-                index++;
-            }
-        }
+        //    ComputeMinHashForSet(set1, 0, minHashValues, bitMap);
+        //    ComputeMinHashForSet(set2, 1, minHashValues, bitMap);
 
-        private static int[,] GetMinHashSlots(int numSets, int numHashFunctions)
-        {
-            int[,] minHashValues = new int[numSets, numHashFunctions];
+        //    return ComputeSimilarityFromSignatures(minHashValues, m_numHashFunctions);
+        //}
 
-            for (int i = 0; i < numSets; i++)
-            {
-                for (int j = 0; j < numHashFunctions; j++)
-                {
-                    minHashValues[i, j] = Int32.MaxValue;
-                }
-            }
-            return minHashValues;
-        }
+        //private void ComputeMinHashForSet<T>(HashSet<T> set, short setIndex, int[,] minHashValues, Dictionary<T, bool[]> bitArray)
+        //{
+        //    int index = 0;
+        //    foreach (T element in bitArray.Keys)
+        //    {
+        //        for (int i = 0; i < m_numHashFunctions; i++)
+        //        {
+        //            if (set.Contains(element))
+        //            {
+        //                int hindex = m_hashFunctions[i](index);
 
-        private static int QHash(uint x, uint a, uint b, uint c, uint bound)
-        {
-            //Modify the hash family as per the size of possible elements in a Set
-            int hashValue = (int)((a * (x >> 4) + b * x + c) & 131071);
-            return Math.Abs(hashValue);
-        }
+        //                if (hindex < minHashValues[setIndex, i])
+        //                {
+        //                    minHashValues[setIndex, i] = hindex;
+        //                }
+        //            }
+        //        }
+        //        index++;
+        //    }
+        //}
 
-        private static Dictionary<T, bool[]> BuildBitMap<T>(HashSet<T> set1, HashSet<T> set2)
-        {
-            Dictionary<T, bool[]> bitArray = new Dictionary<T, bool[]>();
-            foreach (T item in set1)
-            {
-                bitArray.Add(item, new bool[2] { true, false });
-            }
+        //private static int[,] GetMinHashSlots(int numSets, int numHashFunctions)
+        //{
+        //    int[,] minHashValues = new int[numSets, numHashFunctions];
 
-            foreach (T item in set2)
-            {
-                bool[] value;
-                if (bitArray.TryGetValue(item, out value))
-                {
-                    //item is present in set1
-                    bitArray[item] = new bool[2] { true, true };
-                }
-                else
-                {
-                    //item is not present in set1
-                    bitArray.Add(item, new bool[2] { false, true });
-                }
-            }
-            return bitArray;
-        }
+        //    for (int i = 0; i < numSets; i++)
+        //    {
+        //        for (int j = 0; j < numHashFunctions; j++)
+        //        {
+        //            minHashValues[i, j] = Int32.MaxValue;
+        //        }
+        //    }
+        //    return minHashValues;
+        //}
 
-        private static double ComputeSimilarityFromSignatures(int[,] minHashValues, int numHashFunctions)
-        {
-            int identicalMinHashes = 0;
-            for (int i = 0; i < numHashFunctions; i++)
-            {
-                if (minHashValues[0, i] == minHashValues[1, i])
-                {
-                    identicalMinHashes++;
-                }
-            }
-            return (1.0 * identicalMinHashes) / numHashFunctions;
-        }
+        //private static int QHash(uint x, uint a, uint b, uint c, uint bound)
+        //{
+        //    //Modify the hash family as per the size of possible elements in a Set
+        //    int hashValue = (int)((a * (x >> 4) + b * x + c) & 131071);
+        //    return Math.Abs(hashValue);
+        //}
+
+        //private static Dictionary<T, bool[]> BuildBitMap<T>(HashSet<T> set1, HashSet<T> set2)
+        //{
+        //    Dictionary<T, bool[]> bitArray = new Dictionary<T, bool[]>();
+        //    foreach (T item in set1)
+        //    {
+        //        bitArray.Add(item, new bool[2] { true, false });
+        //    }
+
+        //    foreach (T item in set2)
+        //    {
+        //        bool[] value;
+        //        if (bitArray.TryGetValue(item, out value))
+        //        {
+        //            //item is present in set1
+        //            bitArray[item] = new bool[2] { true, true };
+        //        }
+        //        else
+        //        {
+        //            //item is not present in set1
+        //            bitArray.Add(item, new bool[2] { false, true });
+        //        }
+        //    }
+        //    return bitArray;
+        //}
+
+        //private static double ComputeSimilarityFromSignatures(int[,] minHashValues, int numHashFunctions)
+        //{
+        //    int identicalMinHashes = 0;
+        //    for (int i = 0; i < numHashFunctions; i++)
+        //    {
+        //        if (minHashValues[0, i] == minHashValues[1, i])
+        //        {
+        //            identicalMinHashes++;
+        //        }
+        //    }
+        //    return (1.0 * identicalMinHashes) / numHashFunctions;
+        //}
+
+        #endregion
 
     }
 }
